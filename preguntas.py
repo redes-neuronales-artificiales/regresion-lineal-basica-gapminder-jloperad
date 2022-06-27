@@ -59,7 +59,7 @@ def pregunta_02():
     print(round(df["life"].mean(), 4))
 
     # Imprima el tipo de dato de la columna `fertility`.
-    print(df["fertility"].dtype)
+    print(type(df["fertility"]))
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
     print(round(df["GDP"].corr(df["life"]), 4))
@@ -75,10 +75,10 @@ def pregunta_03():
     df = pd.read_csv("gm_2008_region.csv")
 
     # Asigne a la variable los valores de la columna `fertility`
-    X_fertility = df["fertility"].to_numpy
+    X_fertility = np.array(df["fertility"]).reshape(-1,1)
 
     # Asigne a la variable los valores de la columna `life`
-    y_life = df["life"].to_numpy
+    y_life = np.array(df["life"]).reshape(-1,1)
 
     # Importe LinearRegression
     from sklearn.linear_model import LinearRegression
@@ -119,10 +119,10 @@ def pregunta_04():
     df = pd.read_csv("gm_2008_region.csv")
 
     # Asigne a la variable los valores de la columna `fertility`
-    X_fertility = df["fertility"].to_numpy
+    X_fertility = np.array(df["fertility"]).reshape(-1,1)
 
     # Asigne a la variable los valores de la columna `life`
-    y_life = df["life"].to_numpy
+    y_life = np.array(df["life"]).reshape(-1,1)
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 53. El tamaño de la muestra de entrenamiento es del 80%
