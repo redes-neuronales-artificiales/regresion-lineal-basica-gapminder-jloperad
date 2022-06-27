@@ -7,6 +7,9 @@ import sys
 
 import preguntas
 
+# import preguntas
+soluciones = preguntas
+
 
 def test_01():
     """
